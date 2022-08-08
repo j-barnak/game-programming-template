@@ -1,0 +1,7 @@
+[requires]
+lua/5.4.4
+sdl/2.0.20
+
+[generators]
+cmake
+cmake_find_package
