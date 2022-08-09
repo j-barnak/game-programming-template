@@ -5,6 +5,9 @@ set(SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
 
+find_package(SDL2 REQUIRED)
+find_package(lua REQUIRED)
+
 add_executable(game ${SOURCES})
 
 # Conan Requirements
@@ -27,4 +30,5 @@ target_compile_features(game
     PRIVATE
         cxx_std_20
 )
-target_link_libraries(game ${CONAN_LIBS})
+
+target_link_libraries(game PRIVATE SDL2::SDL2 lua::lua)
