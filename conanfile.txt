@@ -1,5 +1,5 @@
 [requires]
-lua/5.4.4
+sol2/3.3.0
 sdl/2.0.20
 
 [generators]
