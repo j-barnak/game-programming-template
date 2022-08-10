@@ -1,9 +1,11 @@
 #include "inc/Game.hpp"
 
 Game::Game() {
-    if (!SDL_Init(SDL_INIT_EVERYTHING)) {
-        std::cerr << "Error initializing SDL\n"; 
+    if (SDL_Init(SDL_INIT_EVERYTHING != 0)) {
+        std::cerr << "Error initializing SDL: " << SDL_GetError() << "\n"; 
     }
 
-    std::cout << "Properly initialized\n";
+    else {
+        std::cout << "Properly initialized\n";
+    }
 }
