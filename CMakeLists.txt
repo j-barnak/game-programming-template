@@ -3,6 +3,7 @@ project(game)
 
 set(SOURCES 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Game.cpp
 )
 
 
@@ -11,6 +12,8 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 add_executable(game ${SOURCES})
+
+target_include_directories(game PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 find_package(SDL2 REQUIRED)
 find_package(sol2 REQUIRED)
